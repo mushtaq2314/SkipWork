@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Your Website</title>
+</head>
+<style>
+/* styles.css */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#b {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.c {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: consolas;
+  opacity: 1;
+  /* Other styling for your content */
+}
+ .gradient-background {
+      width: 100%;
+      height: 200px; /* Set your desired height */
+      /* background: linear-gradient(to right, #1e1e1e, #000000); */
+      background: linear-gradient(to right, #212121, #3d3d3d);
+      /* Adjust colors and position as needed */
+    }
+</style>
+<script>
+// script.js
+window.addEventListener('load', () => {
+  const canvaDesign = document.getElementById('b');
+  const content = document.getElementsByClassName('c');
+  canvaDesign.style.opacity=1
+  // Delay the fade-out effect after 2 seconds
+  setTimeout(() => {
+    canvaDesign.style.opacity = '0';
+
+  }, 1000);
+});
+
+</script>
+<body>
+  <div class="a">
+    <img id="b" src="transition.png" alt="Canva Design">
+    <div class="c">
+      <h1>Hello how are you I am under the water pls help me, here too much raining!!</h1>
+      <div class="gradient-background"></div>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
