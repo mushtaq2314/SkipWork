@@ -7,6 +7,5 @@ class Order(models.Model):
     customer_email = models.CharField( max_length=100)
     special_instructions = models.CharField(default='None', max_length=100)
     document = models.FileField( null=True)
-    order_date = models.DateField( auto_now=False, auto_now_add=False)
     order_status = models.CharField(default='None',max_length=100)
-    
+    order_date = models.CharField(default='None',max_length=100)  

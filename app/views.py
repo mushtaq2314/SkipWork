@@ -16,7 +16,7 @@ def order(request):
         message = request.POST['message']
         file = request.FILES['pdf']
         print(email)
-        obj = Order(OrderID="SW"+month+str(len(Order.objects.values())+1),customer_name=name,customer_email=email,customer_mobile=mobile,document= file,special_instructions=message,date=today)
+        obj = Order(OrderID="SW"+str(len(Order.objects.values())+1),customer_name=name,customer_email=email,customer_mobile=mobile,document= file,special_instructions=message,order_date=str(today))
         obj.save()
     print(len(Order.objects.values()))
     return render(request,'order.html')
