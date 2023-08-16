@@ -18,5 +18,7 @@ def order(request):
         print(email)
         obj = Order(OrderID="SW"+str(len(Order.objects.values())+1),customer_name=name,customer_email=email,customer_mobile=mobile,document= file,special_instructions=message,order_date=str(today))
         obj.save()
+    category = request.GET.get('category',None)
+    print(category)
     print(len(Order.objects.values()))
-    return render(request,'order.html')
+    return render(request,'order.html',{'category':category})
