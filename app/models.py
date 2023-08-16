@@ -9,3 +9,4 @@ class Order(models.Model):
     document = models.FileField( null=True)
     order_status = models.CharField(default='None',max_length=100)
     order_date = models.CharField(default='None',max_length=100)  
+    order_category = models.CharField(default='None',max_length=100)  
