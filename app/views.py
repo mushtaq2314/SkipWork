@@ -10,15 +10,15 @@ def index(request):
     return render(request,'index.html')
 def order(request):
     category = request.GET.get('category',None)
-    print(category)
     if request.method =='POST':
         name = request.POST['fname']+' '+request.POST['lname']
         email = request.POST['email']
         mobile = request.POST['mobile']
         message = request.POST['message']
+        category = request.POST['category']
         file = request.FILES['pdf']
         print(email,category)
-        obj = Order(OrderID="SW"+str(len(Order.objects.values())+1),customer_name=name,customer_email=email,customer_mobile=mobile,document= file,special_instructions=message,order_date=str(today))
-        # obj.save()
+        obj = Order(OrderID="SW"+str(len(Order.objects.values())+1),customer_name=name,customer_email=email,customer_mobile=mobile,document= file,special_instructions=message,order_date=str(today),order_category=category)
+        obj.save()
     print(len(Order.objects.values()))
     return render(request,'order.html',{'category':category})
