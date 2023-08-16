@@ -1178,11 +1178,11 @@ img {
 }
 /*Price*/
 .pricing-container {
-	background: blue;
+	background: cyan;
 }
 .pricing-container h6,
 .pricing-container h2{
-    color: #fff;
+    color: black;
 }
 .pricing {
     background: #fff none repeat scroll 0 0;
