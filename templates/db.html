@@ -1,0 +1,85 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" href="static/favicon.png" type="icon">
+<title>SkipWork-DB</title>
+<body style="background-color: #040c1d;">
+<header class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center" >
+      
+      <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0" style="margin-left: 40%;">
+        <img src="static/db.png" alt="" style="width:15%;">
+        <span class="ml-3 text-xl xl:block lg:hidden">SkipWork</span>
+      </a>
+      
+    </div>
+  </header>
+
+  
+    
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Order ID
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Date
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Category
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Email
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Phone
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Status
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Document
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    &nbsp Action
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+          {% for item in data %}
+          
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" style="color:white;">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{item.1}}
+                </th>
+                <td class="px-6 py-4">
+                    {{item.8}}
+                </td>
+                <td class="px-6 py-4">
+                    {{item.9}}
+                </td>
+                <td class="px-6 py-4">
+                    {{item.4}}
+                </td>
+                <td class="px-6 py-4">
+                   {{item.3}}
+                </td>
+                <td class="px-6 py-4">
+                   {{item.7}}
+                </td>
+                <td class="px-6 py-4">
+                    <a href="/media/{{ item.6 }}" download>{{item.6}}</a>
+                </td>
+                <td class="px-6 py-4">
+                    <button style="background-color: red;color: white;padding: 1px 8px 3px 8px;border-radius: 6px;font-weight: bold;font-size: medium;">Delete</button>
+                </td>
+                
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+  </body>
