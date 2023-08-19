@@ -20,7 +20,7 @@ def loginuser(request):
             login(request,user)
             return redirect('db')
         else:
-            return render(request,'login.html',{'msg':'Invalid Credentials! Please try again'})
+            return render(request,'login.html',{'message':'Invalid Credentials! Please try again'})
     return render(request,'login.html')
             
 def logoutuser(request):
