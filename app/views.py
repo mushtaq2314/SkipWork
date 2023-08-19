@@ -54,6 +54,7 @@ def delete_order(request, order_id):
     try:
         path=Order.objects.filter(OrderID=order_id).values_list()[0][6]
         os.remove(f'./media/{path}')
+        # os.remove(f'home/skipwork/Skipwork/media/{path}')
         Order.objects.filter(OrderID=order_id).delete()
         return JsonResponse({"success": True})
     except Order.DoesNotExist:
