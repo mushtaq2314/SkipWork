@@ -9,7 +9,7 @@
         <img src="static/db.png" alt="" style="width:15%;">
         <span class="ml-3 text-xl xl:block lg:hidden">SkipWork</span>
       </a>
-      <a href="/">
+      <a href="/logout">
       <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" style="margin-left: 500%;background-color: grey;color: white;">Logout
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -54,7 +54,7 @@
         <tbody>
           {% for item in data %}
           
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" style="color:white;">
+            <tr data-order-id="{{ item.1 }}" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" style="color:white;">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {{item.1}}
                 </th>
@@ -77,7 +77,7 @@
                     <a href="/media/{{ item.6 }}" download>{{item.6}}</a>
                 </td>
                 <td class="px-6 py-4">
-                    <button style="background-color: red;color: white;padding: 1px 8px 3px 8px;border-radius: 6px;font-weight: bold;font-size: medium;">Delete</button>
+                    <button style="background-color: red;color: white;padding: 1px 8px 3px 8px;border-radius: 6px;font-weight: bold;font-size: medium;" class="deleting">Delete</button>
                 </td>
                 
             </tr>
@@ -88,3 +88,35 @@
 </div>
 
   </body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var deleteButtons = document.querySelectorAll(".deleting");
+    deleteButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            var orderId = this.closest("tr").getAttribute("data-order-id");
+            deleteOrder(orderId);
+        });
+    });
+});
+var csrfToken = "{{ csrf_token }}";
+function deleteOrder(orderId) {
+    fetch(`/delete_order/${orderId}/`, {
+        method: "DELETE",
+        headers: {
+            "X-CSRFToken": csrfToken
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            var row = document.querySelector(`[data-order-id="${orderId}"]`);
+            if (row) {
+                row.remove();
+            }
+        }
+    })
+    .catch(error => console.error("Error deleting order:", error));
+}
+
+
+</script>
