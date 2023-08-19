@@ -21,7 +21,7 @@ def loginuser(request):
             return redirect('db')
         else:
             return render(request,'login.html',{'message':'Invalid Credentials! Please try again'})
-    return render(request,'login.html')
+    return render(request,'login.html',{'message':None})
             
 def logoutuser(request):
     logout(request)
