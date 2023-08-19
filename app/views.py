@@ -15,7 +15,7 @@ def index(request):
 def loginuser(request):
     if(request.method=='POST'):
         user = authenticate(username=request.POST['username'],password=request.POST['password'])
-        print(user)
+        
         if user is not None: 
             login(request,user)
             return redirect('db')
