@@ -31,7 +31,7 @@ def db(request):
     if(request.user.is_anonymous):
         return render(request,'login.html',{'message':'Please login first to access the database'})
     data  = list(Order.objects.values_list())
-    print(data)
+    # print(data)
     return render(request,'db.html',{'data':data})
 def order(request):
     category = request.GET.get('category',None)
@@ -45,7 +45,7 @@ def order(request):
         print(email,category)
         obj = Order(OrderID="SW-"+month+str(len(Order.objects.values())+1),customer_name=name,customer_email=email,customer_mobile=mobile,document= file,special_instructions=message,order_date=str(today),order_category=category)
         obj.save()
-    print(len(Order.objects.values()))
+    # print(len(Order.objects.values()))
     return render(request,'order.html',{'category':category})
 
 from django.http import JsonResponse
