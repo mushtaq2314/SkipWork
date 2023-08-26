@@ -120,7 +120,7 @@ input[type=file]::file-selector-button:hover {
 								<p>Work gets completed within 48 hrs.</p>
 							</div>
 							<div class="pricing_btn">
-								<p><a href="{% url 'intermediate' %}?category=Fast Lane">Make an order</a></p>
+								<p><a href="{% url 'intermediate' %}?category=Fast Lane&work={{work}}">Make an order</a></p>
 							</div>							
 						</div>					
 					</div>
@@ -136,7 +136,7 @@ input[type=file]::file-selector-button:hover {
 								<p>Work gets completed within 3 to 4 days.</p>
 							</div>
 							<div class="pricing_btn" style="margin-top: -10%;">
-								<p><a href="{% url 'intermediate' %}?category=Regular Lane">Make an order</a></p>
+								<p><a href="{% url 'intermediate' %}?category=Regular Lane&work={{work}}">Make an order</a></p>
 							</div>							
 						</div>					
 					</div>
