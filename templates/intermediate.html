@@ -82,91 +82,85 @@ input[type=file]::file-selector-button:hover {
 </header>
 <!--Header_section--> 
 
-<!--Hero_Section-->
-<section id="hero_section" class="top_cont_outer">
-  <div class="hero_wrapper" style="background-color: blue">
-    <div class="container" >
-      <div class="hero_section">
-        <div class="row">
-          <div class="col-lg-5 col-sm-7">
-            <div class="top_left_cont zoomIn wow animated"> 
-              <h2>Say <strong> Goodbye </strong> to Assignment Stress</h2>
-              <p>Let our experts handle your assignments while you focus on what matters most.</p>
-			  <a href="#pricing" id="ordbtn" >Make An Order</a>
-               </div>
-			   
-          </div>
-          <div class="col-lg-7 col-sm-5">
-			<img src="static/img/image.png" class="zoomIn wow animated" alt="" style="position: relative;top: 30px;margin-bottom: 100px;"/>
-			<!-- <img src="img/home2.png" class="zoomIn wow animated" alt="" width="300px"/>
-			<img src="img/home3.png" class="zoomIn wow animated" alt="" width="300px" style="transform: scaleX(-1);"/> -->
-		  </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--Hero_Section--> 
+
 <!--Pricing-->
-<section  id="service">
+<section id="pricing" class="pricing-container page_section"  >
 	<div class="container">
-	  <h2>Services</h2>
-	  <div class="service_wrapper">
-		
-		  <div class="col-lg-4">
-			<div class="service_block">
-			  <div class="service_icon delay-03s animated wow  zoomIn"><button style="margin-top: 20%;width: 100%;padding:6% 10%;font-size: large;border-radius: 20px;background-color: yellow;color: black;"><a href="{% url 'index' %}?work=Assignment">Order</a></button> </div>
-			  <h3 class="animated fadeInUp wow">Assignment</h3>
-			  <p class="animated fadeInDown wow">Efficiency is a principle that guides every aspect of our assignment writing service. We understand that time is of the essence in the academic world, and our dedication to delivering assignments that stand out while adhering to strict deadlines sets us apart. </p>
-			</div>
-		  </div>
-		  <div class="col-lg-4 borderLeft" >			
-			<div class="service_block">
-			  <div class="service_icon icon2  delay-03s animated wow zoomIn">
-				<button style="margin-top: 20%;width: 100%;padding:6% 10%;font-size: large;border-radius: 20px;background-color: yellow;color: black;"><a href="{% url 'index' %}?work=Record">Order</a></button> </div>
-			  <h3 class="animated fadeInUp wow">Record</h3>
-			  <p class="animated fadeInDown wow">We excel in meticulously managing college lab records. With precision and attention to detail, we ensure that all lab activities are documented. Our streamlined approach to record-keeping guarantees that valuable insights are captured.</p>
-			</div>
-		  </div>
-		  <div class="col-lg-4 borderLeft">
-			<div class="service_block">
-			  <div class="service_icon icon3  delay-03s animated wow zoomIn"><button style="margin-top: 20%;width: 100%;padding:6% 10%;font-size: large;border-radius: 20px;background-color: yellow;color: black;"><a href="{% url 'index' %}?work=Chart Work">Order</a></button> </div>
-			  <h3 class="animated fadeInUp wow">Chart Works</h3>
-			  <p class="animated fadeInDown wow">Elevate your artistic projects with our premium charting services. Transform your creative vision into stunning visual representations that captivate and inspire. Let us bring your craft and artistry to life through our expert charting expertise.</p>
-			</div>
-		  </div>
-		</div>
-		 
-	  
-	</div>
-  </section>
-<section id="aboutUs"><!--Aboutus-->
-<div class="inner_wrapper">
-  <div class="container">
-    <h2>About Us</h2>
-    <div class="inner_section">
-	<div class="row">
-      <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right"><img src="static/img/about-img.png" class="delay-03s animated wow zoomIn" alt=""></div>
-      	<div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
-        	<div class=" delay-01s animated fadeInDown wow animated">
-			<h3>Welcome to SkipWork , your trusted partner in academic excellence.</h3><br/> 
-            <p style="color: black;"> With a relentless commitment to helping students achieve their highest potential, we stand as a beacon of academic support and guidance. Our journey began with a simple yet profound vision – to empower students by providing them with top-notch assignment writing services. With a team of experienced and passionate writers, we understand the challenges students face in managing their academic workload. Through our dedicated efforts, we offer a comprehensive range of assignment solutions tailored to meet the unique needs of each student. Our unwavering focus on quality, originality, and timely delivery has earned us the reputation of being a reliable ally in the pursuit of educational success. Join us on this educational voyage as we transform assignments into opportunities for growth and learning. Your success is our triumph, and we are honored to be a part of your academic journey.</p>
-</div>    
-	   </div>
-      	
-      </div>
-	  
-      
-    </div>
-  </div> 
-  </div>
-</section>
-<!--Aboutus--> 
+			    <h2><strong>PRICING</strong></h2>
+    
+				<div class="row"> 				
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="pricing">
+							<div class="pricing-title">
+								<p>Express Lane</p>
+							</div>
+							<div class="pricing-price">
+								<p><sup>₹ </sup>14.00</p>
+							</div>
+							<div class="pricing-features">
+								<p>Work gets completed within 24 hrs.</p>
+								<!-- <p>Clean and modern</p>
+								<p>Bootstrap & HTML5</p>
+								<p>24/7 support</p> -->
+							</div>
+							<div class="pricing_btn">
+								<p><a href="{% url 'intermediate' %}?category=Express Lane&work={{work}}">Make an order</a></p>
+							</div>							
+						</div>					
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="pricing">
+							<div class="pricing-title">
+								<p>Fast Lane</p>
+							</div>
+							<div class="pricing-price">
+								<p><sup>₹ </sup>12.00</p>
+							</div>
+							<div class="pricing-features">
+								<p>Work gets completed within 48 hrs.</p>
+							</div>
+							<div class="pricing_btn">
+								<p><a href="{% url 'intermediate' %}?category=Fast Lane">Make an order</a></p>
+							</div>							
+						</div>					
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="pricing">
+							<div class="pricing-title">
+								<p>Regular Lane</p>
+							</div>
+							<div class="pricing-price">
+								<p><sup>₹ </sup>10.00</p>
+							</div>
+							<div class="pricing-features">
+								<p>Work gets completed within 3 to 4 days.</p>
+							</div>
+							<div class="pricing_btn" style="margin-top: -10%;">
+								<p><a href="{% url 'intermediate' %}?category=Regular Lane">Make an order</a></p>
+							</div>							
+						</div>					
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="pricing">
+							<div class="pricing-title">
+								<p>Diagrams</p>
+							</div>
+							<div class="pricing-price">
+								<p><sup>₹ </sup>2.00 to 5.00</p>
+							</div>
+							<div class="pricing-features">
+								<p>Diagrams</p>
+							</div>
+							<div class="pricing_btn">
+								<p><a href="/order">Make an order</a></p>
+							</div>							
+						</div>					
+					</div>	
+				</div><!--- END ROW -->
+			</div><!--- END CONTAINER -->
+		</section>
+<!--Pricing-->
 
-
-<!--Service-->
-
-<!--Service-->
 
 
 		

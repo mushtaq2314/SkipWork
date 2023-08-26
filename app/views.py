@@ -12,6 +12,9 @@ month=calendar.month_abbr[now.month]
 print(month,type(month))
 def index(request):
     return render(request,'index.html')
+def intermediate(request):
+    work = request.GET.get('work',None)
+    return render(request,'intermediate.html',{'work':work})
 def loginuser(request):
     if(request.method=='POST'):
         user = authenticate(username=request.POST['username'],password=request.POST['password'])
@@ -35,6 +38,7 @@ def db(request):
     return render(request,'db.html',{'data':data})
 def order(request):
     category = request.GET.get('category',None)
+    work = request.GET.get('work',None)
     if request.method =='POST':
         name = request.POST['fname']+' '+request.POST['lname']
         email = request.POST['email']
@@ -46,7 +50,7 @@ def order(request):
         obj = Order(OrderID="SW-"+month+str(len(Order.objects.values())+1),customer_name=name,customer_email=email,customer_mobile=mobile,document= file,special_instructions=message,order_date=str(today),order_category=category)
         obj.save()
     # print(len(Order.objects.values()))
-    return render(request,'order.html',{'category':category})
+    return render(request,'order.html',{'category':category,'work':work})
 
 from django.http import JsonResponse
 

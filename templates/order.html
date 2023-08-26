@@ -73,6 +73,7 @@ input[type=file]::file-selector-button:hover {
       <div class="flex flex-col text-center w-full mb-12" >
         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900" style="font-size: x-large;">Make an order</h1>
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="font-size: medium;">Please upload the pdf and provide necessary details below.</p>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="font-size: medium;font-weight: bold;">Work: <input type="text" name="category" id="" value="{{work}}"style="text-align: center;"> </p>
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="font-size: medium;font-weight: bold;">Category: <input type="text" name="category" id="" value="{{category}}"style="text-align: center;"> </p>
       </div>
       <div class="lg:w-1/2 md:w-2/3 mx-auto">
@@ -105,6 +106,68 @@ input[type=file]::file-selector-button:hover {
             <div class="relative">
               <label for="mobile" class="leading-7 text-sm text-gray-600" style="font-size: medium;">Mobile *</label>
               <input type="text" id="mobile" name="mobile" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
+            </div>
+          </div>
+          
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="email" class="leading-7 text-sm text-gray-600" style="font-size: medium;">School *</label>
+              <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
+            </div>
+          </div>
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="mobile" class="leading-7 text-sm text-gray-600" style="font-size: medium;">No. of Sides *</label>
+              <input type="text" id="mobile" name="mobile" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
+            </div>
+          </div>
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="mobile" class="leading-7 text-sm text-gray-600" style="font-size: medium;">No. of Diagrams (0 if none) *</label>
+              <input type="text" id="mobile" name="mobile" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
+            </div>
+          </div>
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="pagetype" class="leading-7 text-sm text-gray-600" style="font-size: medium;">Type of sheets *</label>
+              <div class="flex justify-center">
+                <!--First radio-->
+                <div class="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
+                  <input
+                    class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+                    type="radio"
+                    name="pagetype"
+                    id="inlineRadio1"
+                    value="white" />
+                  <label
+                    class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+                    for="inlineRadio1"
+                    >White</label
+                  >
+                </div>
+              
+                <!--Second radio-->
+                <div class="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
+                  <input
+                    class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+                    type="radio"
+                    name="pagetype"
+                    id="inlineRadio2"
+                    value="coloured" />
+                  <label
+                    class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+                    for="inlineRadio2"
+                    >Coloured</label
+                  >
+                </div>
+              
+              </div>
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="message" class="leading-7 text-sm text-gray-600" style="font-size: medium;">Any Front Page Instructions</label >
+              <textarea id="message" name="message" class="w-3/4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" style="font-size: medium;"></textarea>
             </div>
           </div>
           <div class="p-2 w-full">
