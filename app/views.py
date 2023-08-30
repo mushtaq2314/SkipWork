@@ -14,6 +14,8 @@ def index(request):
     return render(request,'index.html')
 def intermediate(request):
     work = request.GET.get('work',None)
+    if(work=='Chart Work'):
+        return render(request,'intermediate_chart.html',{'work':work})
     return render(request,'intermediate.html',{'work':work})
 def loginuser(request):
     if(request.method=='POST'):
@@ -50,7 +52,13 @@ def order(request):
         obj = Order(OrderID="SW-"+month+str(len(Order.objects.values())+1),customer_name=name,customer_email=email,customer_mobile=mobile,document= file,special_instructions=message,order_date=str(today),order_category=category)
         obj.save()
     # print(len(Order.objects.values()))
-    return render(request,'order.html',{'category':category,'work':work})
+    if(work=='Assignment'):
+        return render(request,'order_a.html',{'category':category,'work':work})
+    elif(work=='Record'):
+        return render(request,'order_r.html',{'category':category,'work':work})
+    else:
+        return render(request,'order_c.html',{'category':category,'work':work})
+        
 
 from django.http import JsonResponse
 

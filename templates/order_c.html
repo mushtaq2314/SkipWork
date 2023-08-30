@@ -111,25 +111,25 @@ input[type=file]::file-selector-button:hover {
           
           <div class="p-2 w-1/2">
             <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600" style="font-size: medium;">School *</label>
-              <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
+              <label  class="leading-7 text-sm text-gray-600" style="font-size: medium;">School *</label>
+              <select data-te-select-init style="margin-top: 5%;">
+                <option value="Glendel Academy">Glendel Academy</option>
+                
+              </select>
             </div>
           </div>
           <div class="p-2 w-1/2">
             <div class="relative">
-              <label for="mobile" class="leading-7 text-sm text-gray-600" style="font-size: medium;">No. of Sides *</label>
+              <label for="mobile" class="leading-7 text-sm text-gray-600" style="font-size: medium;">Chart Colour *</label>
               <input type="text" id="mobile" name="mobile" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
             </div>
           </div>
+
+                    <!-- Border specs-->
+
           <div class="p-2 w-1/2">
             <div class="relative">
-              <label for="mobile" class="leading-7 text-sm text-gray-600" style="font-size: medium;">No. of Diagrams (0 if none) *</label>
-              <input type="text" id="mobile" name="mobile" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
-            </div>
-          </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="pagetype" class="leading-7 text-sm text-gray-600" style="font-size: medium;">Type of sheets *</label>
+              <label for="pagetype" class="leading-7 text-sm text-gray-600" style="font-size: medium;">Type of Borders *</label>
               <div class="flex justify-center">
                 <!--First radio-->
                 <div class="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
@@ -142,7 +142,7 @@ input[type=file]::file-selector-button:hover {
                   <label
                     class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
                     for="inlineRadio1"
-                    >White</label
+                    > &nbspSolid Borders</label
                   >
                 </div>
               
@@ -157,25 +157,34 @@ input[type=file]::file-selector-button:hover {
                   <label
                     class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
                     for="inlineRadio2"
-                    >Coloured</label
+                    >&nbspDesigned Borders</label
                   >
                 </div>
               
               </div>
             </div>
           </div>
+
+                    <!-- Others-->
+                    <div class="p-2 w-1/2">
+                      <div class="relative">
+                        <label for="pagetype" class="leading-7 text-sm text-gray-600" style="font-size: medium;margin-top: 5%;">* Our team will contact you for further details </label>
+                        
+                      </div>
+                    </div>
           <div class="p-2 w-full">
             <div class="relative">
-              <label for="message" class="leading-7 text-sm text-gray-600" style="font-size: medium;">Any Front Page Instructions</label >
+              <label  class="leading-7 text-sm text-gray-600" style="font-size: medium;">Border Instructions (if any)</label >
               <textarea id="message" name="message" class="w-3/4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" style="font-size: medium;"></textarea>
             </div>
           </div>
           <div class="p-2 w-full">
             <div class="relative">
-              <label for="message" class="leading-7 text-sm text-gray-600" style="font-size: medium;">Any Special Instructions</label >
+              <label class="leading-7 text-sm text-gray-600" style="font-size: medium;">Theme Instructions:</label >
               <textarea id="message" name="message" class="w-3/4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" style="font-size: medium;"></textarea>
             </div>
           </div>
+          
           <div class="p-2 w-full">
             <button class="flex mx-auto text-white bg-blue-600 border-0 py-3 px-10 focus:outline-none hover:bg-blue-600 rounded text-lg" type="submit">Submit</button>
           </div>
