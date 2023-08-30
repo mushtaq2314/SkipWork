@@ -11,4 +11,5 @@ urlpatterns = [
     path('logout',views.logoutuser,name='logout'),
     path('delete_order/<str:order_id>/',views.delete_order,name='deleteOrder'),
     path('db',views.db,name='db'),
+    path('contact',views.contact,name='contact'),
 ]+static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

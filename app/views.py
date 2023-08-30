@@ -71,3 +71,25 @@ def delete_order(request, order_id):
         return JsonResponse({"success": True})
     except Order.DoesNotExist:
         return JsonResponse({"success": False})
+
+
+#Contact Form
+from django.core.mail import send_mail
+from django.conf import settings
+
+def contact(request):
+    if(request.method == 'POST'):
+        subject = 'There is someone who wants to contact you!'
+        name = request.POST['name']
+        mobile = request.POST['mobile']
+        recipient_list = request.POST.get('mail')
+        message = request.POST['message']+f'\n\nName: {name}\nEmail: {recipient_list}\nMobile: {mobile}'
+        print(message)
+        email_from = settings.EMAIL_HOST_USER
+        send_mail( subject, message, email_from, [email_from] )
+        #Sending mail to the customer
+        subject = 'Reply from SkipWork'
+        message = f'Hey {name}, we have recieved your query. Our team will contact you soon through email or call.'
+        send_mail( subject, message, email_from, [recipient_list] )
+
+    return render(request,'index.html')    
