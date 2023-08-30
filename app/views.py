@@ -12,6 +12,8 @@ month=calendar.month_abbr[now.month]
 print(month,type(month))
 def index(request):
     return render(request,'index.html')
+def payment(request):
+    return render(request,'payment.html')
 def intermediate(request):
     work = request.GET.get('work',None)
     if(work=='Chart Work'):

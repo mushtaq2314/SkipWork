@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1">
+  <title>SkipWork</title>
+  <link rel="icon" href="static/favicon.png" type="icon">
+  <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="static/css/style.css" rel="stylesheet" type="text/css">
+  <link href="static/css/font-awesome.css" rel="stylesheet" type="text/css">
+  <link href="static/css/animate.css" rel="stylesheet" type="text/css">
+  <link href="static/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+  <link href="static/css/magnific-popup.css" rel="stylesheet">
+  <link href="static/css/gallery-1.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!--[if lt IE 9]>
+    <script src="js/respond-1.1.0.min.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/html5element.js"></script>
+<![endif]-->
+
+</head>
+<style>
+  input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: blue;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+
+  input[type=file]::file-selector-button:hover {
+    background: white;
+  }
+
+  .file-input-label::after {
+    content: "No file chosen";
+    color: gray;
+    /* Change this color to your desired color */
+    margin-left: 5px;
+  }
+</style>
+
+<body>
+
+  <!--Header_section-->
+  <header id="header_wrapper">
+    <div class="container">
+      <div class="header_box">
+        <div class="logo"><a href="/"><img src="static/logo.png" alt="logo" width="300px"
+              style="filter: invert(100%);margin-top: -5%;margin-bottom: -5%;"></a></div>
+        <nav class="navbar navbar-inverse" role="navigation">
+          <div class="navbar-header">
+            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+              <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          </div>
+          <div id="main-nav" class="collapse navbar-collapse navStyle">
+            <ul class="nav navbar-nav" id="mainNav" style="margin-top: 10px;">
+              <li><a href="/" class="scroll-link"><- Back To Home</a></li>
+
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!--Header_section-->
+  <section class="text-gray-600 body-font lg:ml-60">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+      <div class="lg:max-w-lg lg:w-full lg:ml-80  md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <img class="object-cover object-center rounded" alt="hero" src="static/img/qr.jpg">
+      </div>
+      <div class="lg:flex-grow md:w-1/2 lg:pl-40 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Payment: ₹100/-
+        </h1>
+        <p class="mb-8 leading-relaxed">Please upload the screenshot of the payment.</p>
+        <input class="block w-full text-lg text-blue-900 border border-gray-300 rounded-lg cursor-pointer bg-blue-50 dark:text-black-400 focus:outline-none dark:bg-white-900  dark:placeholder-black-400" name="pdf" id="multiple_files" type="file" required style="width: 40%;margin-bottom: 2%;">
+        <div class="flex justify-center">
+          <button class="inline-flex text-white bg-blue-500 border-0  focus:outline-none hover:bg-indigo-600 rounded text-x1 lg:text-2xl px-10 py-6" type="submit">Submit</button>
+
+          <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-6 px-10 focus:outline-none hover:bg-gray-200 rounded lg:text-2xl ">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Footer-->
+  <footer class="footer_wrapper" id="contact">
+    <div class="container">
+      <section class="page_section contact" id="contact">
+        <div class="contact_section">
+          <h2>Contact Us</h2>
+          <div class="row">
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- <div class="col-lg-4 wow fadeInLeft">	
+		 <div class="contact_info">
+                            <div class="detail">
+                                <h4>Ballet One Page</h4>
+                                <p>104, Some street, NewYork, USA</p>
+                            </div>
+                            <div class="detail">
+                                <h4>Call us</h4>
+                                <p>+1 234 567890</p>
+                            </div>
+                            <div class="detail">
+                                <h4>Email us</h4>
+                                <p>support@sitename.com</p>
+                            </div> 
+                        </div>
+       		  
+			  
+          
+          <ul class="social_links">
+            <li class="twitter animated bounceIn wow delay-02s"><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+            <li class="facebook animated bounceIn wow delay-03s"><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
+            <li class="pinterest animated bounceIn wow delay-04s"><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
+            <li class="gplus animated bounceIn wow delay-05s"><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li> 
+          </ul>
+        </div> -->
+          <div class="col-lg-8 wow fadeInLeft delay-06s">
+            <div class="form">
+              <!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
+              <form name="sentMessage" id="contactForm" novalidate>
+                <div class="control-group">
+                  <div class="controls">
+                    <input type="text" class="form-control input-text" placeholder="Full Name" id="name" required
+                      data-validation-required-message="Please enter your name" />
+                    <p class="help-block"></p>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="controls">
+                    <input type="email" class="form-control input-text" placeholder="Email" id="email" required
+                      data-validation-required-message="Please enter your email" />
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <div class="controls">
+                    <textarea rows="10" cols="100" class="form-control input-text" placeholder="Message" id="message"
+                      required data-validation-required-message="Please enter your message" minlength="5"
+                      data-validation-minlength-message="Min 5 characters" maxlength="999"
+                      style="resize:none"></textarea>
+                  </div>
+                </div>
+                <div id="success"> </div> <!-- For success/fail messages -->
+                <button type="submit" class="btn btn-primary input-btn pull-right">Send</button><br />
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </footer>
+
+  
+
+
+  
+
+</body>
+
+</html>
+<script src="https://tailwindcss.com"></script>
