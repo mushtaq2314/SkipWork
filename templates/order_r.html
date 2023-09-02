@@ -86,7 +86,7 @@ input[type=file]::file-selector-button:hover {
       <div class="flex flex-col text-center w-full mb-12" >
         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900" style="font-size: x-large;">Make an order</h1>
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="font-size: medium;">Please upload the pdf and provide necessary details below.</p>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="font-size: medium;font-weight: bold;">Work: <input type="text" name="category" id="" value="{{work}}"style="text-align: center;"> </p>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="font-size: medium;font-weight: bold;">Work: <input type="text" name="work" id="" value="{{work}}"style="text-align: center;"> </p>
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="font-size: medium;font-weight: bold;">Category: <input type="text" name="category" id="" value="{{category}}"style="text-align: center;"> </p>
       </div>
       <div class="lg:w-1/2 md:w-2/3 mx-auto">
@@ -140,7 +140,7 @@ input[type=file]::file-selector-button:hover {
           <div class="p-2 w-1/2">
             <div class="relative">
               <label for="mobile" class="leading-7 text-sm text-gray-600" style="font-size: medium;">No. of Diagrams (₹4/diagram) (0 if none) *</label>
-              <input type="text" id="mobile" name="mobile" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
+              <input type="text" id="mobile" name="diagrams" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
             </div>
           </div>
           <div class="p-2 w-1/2">
@@ -154,7 +154,7 @@ input[type=file]::file-selector-button:hover {
               <textarea id="message" name="message" class="w-3/4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" style="font-size: medium;"></textarea>
             </div>
           </div>
-          <div class="p-2 w-full">
+          <div class="p-3 w-full">
             <button class="flex mx-auto text-white bg-blue-600 border-0 py-3 px-10 focus:outline-none hover:bg-blue-600 rounded text-lg" type="submit">Submit</button>
           </div>
           

@@ -45,7 +45,7 @@ def order(request):
     work = request.GET.get('work',None)
     if request.method =='POST':
         print(request.POST)
-        context = request.POST
+        data = request.POST
         if(request.POST['work']=='Assignment'):
             if(request.POST['category']=='Express Lane'):
                 cost = int(request.POST['sides'])*14 + int(request.POST['diagrams'])*4
@@ -53,8 +53,15 @@ def order(request):
                 cost = int(request.POST['sides'])*12 + int(request.POST['diagrams'])*4
             if(request.POST['category']=='Regular Lane'):
                 cost = int(request.POST['sides'])*10 + int(request.POST['diagrams'])*4
+        if(request.POST['work']=='Record'):
+            if(request.POST['category']=='Express Lane'):
+                cost = int(request.POST['sides'])*14 + int(request.POST['diagrams'])*4
+            if(request.POST['category']=='Fast Lane'):
+                cost = int(request.POST['sides'])*12 + int(request.POST['diagrams'])*4
+            if(request.POST['category']=='Regular Lane'):
+                cost = int(request.POST['sides'])*10 + int(request.POST['diagrams'])*4
                 
-        return render(request,'payment.html',{'context':context,'cost':cost})
+        return render(request,'payment.html',{'data':data,'cost':cost})
     #     name = request.POST['fname']+' '+request.POST['lname']
     #     email = request.POST['email']
     #     mobile = request.POST['mobile']
