@@ -13,7 +13,7 @@ print(month,type(month))
 def index(request):
     return render(request,'index.html')
 def payment(request):
-    return render(request,'payment.html')
+    return render(request,'index.html')
 def intermediate(request):
     work = request.GET.get('work',None)
     if(work=='Chart Work'):
@@ -44,15 +44,26 @@ def order(request):
     category = request.GET.get('category',None)
     work = request.GET.get('work',None)
     if request.method =='POST':
-        name = request.POST['fname']+' '+request.POST['lname']
-        email = request.POST['email']
-        mobile = request.POST['mobile']
-        message = request.POST['message']
-        category = request.POST['category']
-        file = request.FILES['pdf']
-        # print(email,category)
-        obj = Order(OrderID="SW-"+month+str(len(Order.objects.values())+1),customer_name=name,customer_email=email,customer_mobile=mobile,document= file,special_instructions=message,order_date=str(today),order_category=category)
-        obj.save()
+        print(request.POST)
+        context = request.POST
+        if(request.POST['work']=='Assignment'):
+            if(request.POST['category']=='Express Lane'):
+                cost = int(request.POST['sides'])*14 + int(request.POST['diagrams'])*4
+            if(request.POST['category']=='Fast Lane'):
+                cost = int(request.POST['sides'])*12 + int(request.POST['diagrams'])*4
+            if(request.POST['category']=='Regular Lane'):
+                cost = int(request.POST['sides'])*10 + int(request.POST['diagrams'])*4
+                
+        return render(request,'payment.html',{'context':context,'cost':cost})
+    #     name = request.POST['fname']+' '+request.POST['lname']
+    #     email = request.POST['email']
+    #     mobile = request.POST['mobile']
+    #     message = request.POST['message']
+    #     category = request.POST['category']
+    #     file = request.FILES['pdf']
+    #     # print(email,category)
+    #     obj = Order(OrderID="SW-"+month+str(len(Order.objects.values())+1),customer_name=name,customer_email=email,customer_mobile=mobile,document= file,special_instructions=message,order_date=str(today),order_category=category)
+    #     obj.save()
     # print(len(Order.objects.values()))
     if(work=='Assignment'):
         return render(request,'order_a.html',{'category':category,'work':work})
