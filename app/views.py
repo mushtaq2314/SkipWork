@@ -13,6 +13,8 @@ print(month,type(month))
 def index(request):
     return render(request,'index.html')
 def payment(request):
+    if(request.method=='POST'):
+        print(request.POST)
     return render(request,'index.html')
 def intermediate(request):
     work = request.GET.get('work',None)
@@ -40,12 +42,14 @@ def db(request):
     data  = list(Order.objects.values_list())
     # print(data)
     return render(request,'db.html',{'data':data})
+data= None
 def order(request):
     category = request.GET.get('category',None)
     work = request.GET.get('work',None)
     if request.method =='POST':
-        print(request.POST)
+        global data
         data = request.POST
+        print(data)
         if(request.POST['work']=='Assignment'):
             if(request.POST['category']=='Express Lane'):
                 cost = int(request.POST['sides'])*14 + int(request.POST['diagrams'])*4
@@ -53,6 +57,10 @@ def order(request):
                 cost = int(request.POST['sides'])*12 + int(request.POST['diagrams'])*4
             if(request.POST['category']=='Regular Lane'):
                 cost = int(request.POST['sides'])*10 + int(request.POST['diagrams'])*4
+            if(request.POST['binding']=='Spiral'):
+                cost+=50    
+            if(request.POST['binding']=='Stick'):
+                cost+=25
         if(request.POST['work']=='Record'):
             if(request.POST['category']=='Express Lane'):
                 cost = int(request.POST['sides'])*14 + int(request.POST['diagrams'])*4
