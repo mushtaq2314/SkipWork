@@ -80,12 +80,12 @@ from django.http import JsonResponse
 
 def delete_order(request, order_id):
     try:
-        path=Assignment.objects.filter(OrderID=order_id).values_list()[0][6]
-        # os.remove(f'./media/{path}')
-        os.remove(f'/home/skipwork/SkipWork/media/{path}')
+        path=Assignment.objects.filter(OrderID=order_id).values_list()[0][3]
+        os.remove(f'./media/{path}')
+        # os.remove(f'/home/skipwork/SkipWork/media/{path}')
         Assignment.objects.filter(OrderID=order_id).delete()
         return JsonResponse({"success": True})
-    except Order.DoesNotExist:
+    except Assignment.DoesNotExist:
         return JsonResponse({"success": False})
 
 
