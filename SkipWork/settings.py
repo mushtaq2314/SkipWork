@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -49,6 +50,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Use the database to store session data
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+# Set the session cookie to be secure (recommended for production)
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_AGE = 300
+
 
 ROOT_URLCONF = 'SkipWork.urls'
 
