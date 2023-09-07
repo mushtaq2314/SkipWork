@@ -32,7 +32,7 @@ def payment(request):
                 email = EmailMultiAlternatives(subject,message,email_from,[email_from])
                 uploaded_file = request.FILES['payment']
                 # email.attach_file(f'./media/{obj.payment}')
-                email.attach_file(f'home/skipwork/SkipWork/media/{obj.payment}')
+                email.attach_file(f'/home/skipwork/SkipWork/media/{obj.payment}')
                 email.send()
                 request.session.pop('data',None)
                 # print(len(Assignment.objects.values()))
