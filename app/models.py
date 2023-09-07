@@ -4,7 +4,7 @@ class Assignment(models.Model):
     OrderID = models.CharField( max_length=50)
     order_category = models.CharField(default='None',max_length=100)  
     document = models.FileField(upload_to='assignments/', null=True)
-    # payment = models.FileField( null=True,upload_to='app')
+    payment = models.FileField( null=True,upload_to='a_payments/')
     customer_name = models.CharField( max_length=100)
     customer_mobile = models.CharField( max_length=20)
     customer_email = models.CharField( max_length=100)

@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from .models import Assignment
 from django.contrib.auth.models import User 
 from django.contrib.auth import authenticate,login,logout
+from django.core.mail import send_mail,EmailMultiAlternatives
+from django.conf import settings
 import os
 # Create your views here.
 from datetime import datetime,date
@@ -18,21 +20,23 @@ def payment(request):
     if(request.method=='POST'):
         #Saving data to Database
         if data['work']=='Assignment':
-                obj = Assignment(OrderID="SW-"+month+str(len(Assignment.objects.values())+1),customer_name=data['fname']+' '+data['lname'],customer_email=data['email'],customer_mobile=data['mobile'],document= request.FILES['pdf'],special_instructions=data['message'],order_date=str(today),order_category=data['category'],frontpage_instructions=data['border_instructions'],customer_school=data['school'])
+                obj = Assignment(OrderID="SW-"+month+str(len(Assignment.objects.values())+1),customer_name=data['fname']+' '+data['lname'],customer_email=data['email'],customer_mobile=data['mobile'],document= request.FILES['pdf'],special_instructions=data['message'],order_date=str(today),order_category=data['category'],frontpage_instructions=data['border_instructions'],customer_school=data['school'],payment=request.FILES['payment'])
                 obj.save()
-                
                 subject = 'An '+data['work']+' order has been recieved checkout the database for further details!'
                 name = data['fname']+' '+data['lname']
                 mobile = data['mobile']
                 recipient_list = data['email']
-                message =f'\n\nName: {name}\nEmail: {recipient_list}\nMobile: {mobile}'
-                print(message)
+                cost = request.POST['cost']
+                message =f'\n\nName: {name}\nEmail: {recipient_list}\nMobile: {mobile}\nCost:{cost}'
                 email_from = settings.EMAIL_HOST_USER
-                send_mail( subject, message, email_from, [email_from] )
+                email = EmailMultiAlternatives(subject,message,email_from,[email_from])
+                uploaded_file = request.FILES['payment']
+                email.attach_file(f'./media/{obj.payment}')
+                email.send()
                 request.session.pop('data',None)
                 # print(len(Assignment.objects.values()))
             
-    return render(request,'index.html')
+    return render(request,'done.html')
 
 
 
@@ -49,6 +53,8 @@ def order(request):
                 cost = int(request.POST['sides'])*12 + int(request.POST['diagrams'])*4
             if(request.POST['category']=='Regular Lane'):
                 cost = int(request.POST['sides'])*10 + int(request.POST['diagrams'])*4
+            if(request.POST['sheets']=='Coloured'):
+                cost+= int(int(request.POST['sides'])/2)
             if(request.POST['binding']=='Spiral'):
                 cost+=50    
             if(request.POST['binding']=='Stick'):
@@ -90,8 +96,7 @@ def delete_order(request, order_id):
 
 
 #Contact Form
-from django.core.mail import send_mail
-from django.conf import settings
+
 
 def contact(request):
     if(request.method == 'POST'):
