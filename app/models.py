@@ -13,6 +13,7 @@ class Assignment(models.Model):
     frontpage_instructions = models.CharField(default='None', max_length=1000)
     order_status = models.CharField(default='None',max_length=100)
     order_date = models.CharField(default='None',max_length=100) 
+    delivery_address = models.CharField(default='None',max_length=1000) 
 
 # class temp(models.Model):
 #     document = models.FileField( upload_to='temp/',null=True)
