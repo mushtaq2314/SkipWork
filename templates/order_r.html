@@ -92,9 +92,11 @@ input[type=file]::file-selector-button:hover {
       <div class="lg:w-1/2 md:w-2/3 mx-auto">
         <div class="flex flex-wrap -m-2">
             
-<div style="width: 60%;position: relative;left: 20%;">
+<div style="position: relative;left: 10%;" class="lg:w-4/5 md:w-4/5">
 
-    <input class="block w-full text-lg text-blue-900 border border-gray-300 rounded-lg cursor-pointer bg-blue-50 dark:text-black-400 focus:outline-none dark:bg-white-900  dark:placeholder-black-400" name="pdf" id="multiple_files" type="file" required>
+    {% comment %} <input class="block w-full text-lg text-blue-900 border border-gray-300 rounded-lg cursor-pointer bg-blue-50 dark:text-black-400 focus:outline-none dark:bg-white-900  dark:placeholder-black-400" name="pdf" id="multiple_files" type="file" required> {% endcomment %}
+    <p style="font-weight: bolder;font-size: larger;">**Please upload the pdf of content during payment i.e, in the next page**</p>
+    <p style="font-weight: bolder;font-size: larger;">**Our team will contact you regarding the purchase of record**</p>
 </div>
 
           <div class="p-2 w-1/2">
@@ -125,10 +127,7 @@ input[type=file]::file-selector-button:hover {
           <div class="p-2 w-1/2">
             <div class="relative">
               <label  class="leading-7 text-sm text-gray-600" style="font-size: medium;">School *</label>
-              <select data-te-select-init style="margin-top: 5%;">
-                <option value="Glendel Academy">Glendel Academy</option>
-                
-              </select>
+              <input type="text" id="mobile" name="school" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
             </div>
           </div>
           <div class="p-2 w-1/2">
@@ -143,11 +142,22 @@ input[type=file]::file-selector-button:hover {
               <input type="text" id="mobile" name="diagrams" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required style="font-size: medium;">
             </div>
           </div>
-          <div class="p-2 w-1/2">
+          <div class="p-2 ">
             <div class="relative">
-              <label class="leading-7 text-sm text-gray-600" style="font-size: medium;margin-top: 5%;">*Record will be purchased by SkipWork</label>
+              <label  class="leading-7 text-sm text-gray-600" style="font-size: medium;">Select Delivery Address*</label>
+              <select data-te-select-init style="margin-top: 5%;margin-left: 10%;border: 1px solid black;font-size: medium;border-radius: 5px;" name="delivery">
+                <option value="School">School</option>
+                <option value="Other">Other</option>
+                
+              </select>
             </div>
           </div>
+<div class="p-2 w-full">
+  <div class="relative">
+    <label for="message" class="leading-7 text-sm text-gray-600" style="font-size: medium;">Please provide address for delivery (if not delivering at school)</label >
+    <textarea id="message" name="delivery_address" class="w-3/4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" style="font-size: medium;"></textarea>
+  </div>
+</div>
           <div class="p-2 w-full">
             <div class="relative">
               <label for="message" class="leading-7 text-sm text-gray-600" style="font-size: medium;">Any Special Instructions</label >

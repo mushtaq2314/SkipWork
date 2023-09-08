@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Assignment
+from .models import Assignment,Record
 from django.contrib.auth.models import User 
 from django.contrib.auth import authenticate,login,logout
 from django.core.mail import send_mail,EmailMultiAlternatives
@@ -24,18 +24,21 @@ def payment(request):
         if data['work']=='Assignment':
                 obj = Assignment(OrderID="SW-"+month+str(len(Assignment.objects.values())+1),customer_name=data['fname']+' '+data['lname'],customer_email=data['email'],customer_mobile=data['mobile'],document= request.FILES['pdf'],special_instructions=data['message'],order_date=str(today),order_category=data['category'],frontpage_instructions=data['border_instructions'],customer_school=data['school'],payment=request.FILES['payment'],delivery_address=delivery_address)
                 obj.save()
-                subject = 'An '+data['work']+' order has been recieved checkout the database for further details!'
-                name = data['fname']+' '+data['lname']
-                mobile = data['mobile']
-                recipient_list = data['email']
-                cost = request.POST['cost']
-                message =f'\n\nName: {name}\nEmail: {recipient_list}\nMobile: {mobile}\nSchool:{obj.customer_school}\nCost:{cost}'
-                email_from = settings.EMAIL_HOST_USER
-                email = EmailMultiAlternatives(subject,message,email_from,[email_from])
-                # email.attach_file(f'./media/{obj.payment}')
-                email.attach_file(f'/home/skipwork/SkipWork/media/{obj.payment}')
-                email.send()
-                request.session.pop('data',None)
+        if data['work']=='Record':
+            obj = Record(OrderID="SW-"+month+str(len(Assignment.objects.values())+1),customer_name=data['fname']+' '+data['lname'],customer_email=data['email'],customer_mobile=data['mobile'],document= request.FILES['pdf'],special_instructions=data['message'],order_date=str(today),order_category=data['category'],customer_school=data['school'],payment=request.FILES['payment'],delivery_address=delivery_address)
+            obj.save()
+        subject = 'An '+data['work']+' order has been recieved checkout the database for further details!'
+        name = data['fname']+' '+data['lname']
+        mobile = data['mobile']
+        recipient_list = data['email']
+        cost = request.POST['cost']
+        message =f'\n\nName: {name}\nEmail: {recipient_list}\nMobile: {mobile}\nSchool:{obj.customer_school}\nCost:{cost}'
+        email_from = settings.EMAIL_HOST_USER
+        email = EmailMultiAlternatives(subject,message,email_from,[email_from])
+        # email.attach_file(f'./media/{obj.payment}')
+        email.attach_file(f'/home/skipwork/SkipWork/media/{obj.payment}')
+        email.send()
+        request.session.pop('data',None)
                 # print(len(Assignment.objects.values()))
             
     return render(request,'done.html')
