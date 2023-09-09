@@ -38,6 +38,16 @@ def payment(request):
         # email.attach_file(f'./media/{obj.payment}')
         email.attach_file(f'/home/skipwork/SkipWork/media/{obj.payment}')
         email.send()
+        #Sending mail to customer
+        subject = 'Reply from SkipWork'
+        message = f'Hey {name}, we have recieved your '+data['work']+' order. Our team will contact you soon through email or call.Here are your submissions.'
+        email = EmailMultiAlternatives(subject,message,email_from,[recipient_list])
+        email.attach_file(f'/home/skipwork/SkipWork/media/{obj.payment}')
+        email.attach_file(f'/home/skipwork/SkipWork/media/{obj.document}')
+        # email.attach_file(f'./media/{obj.document}')
+        # email.attach_file(f'./media/{obj.payment}')
+
+        email.send()
         request.session.pop('data',None)
                 # print(len(Assignment.objects.values()))
             
