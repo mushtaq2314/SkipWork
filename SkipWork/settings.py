@@ -56,7 +56,7 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 # Set the session cookie to be secure (recommended for production)
 SESSION_COOKIE_SECURE = True
-SESSION_COOKIE_AGE = 300
+SESSION_COOKIE_AGE = 6000
 
 
 ROOT_URLCONF = 'SkipWork.urls'
