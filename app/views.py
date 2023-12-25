@@ -84,7 +84,7 @@ def order(request):
             if(request.POST['category']=='Regular Lane'):
                 cost = int(request.POST['sides'])*10 + int(request.POST['diagrams'])*4
                 
-        return render(request,'payment.html',{'cost':cost})
+        return render(request,'payment.html',{'cost':cost//2})
     
     if(work=='Assignment'):
         return render(request,'order_a.html',{'category':category,'work':work})
