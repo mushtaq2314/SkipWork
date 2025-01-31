@@ -2,3 +2,7 @@ db.sqlite3
 
 db.sqlite3
 media/
+env/
+app/__pycache__/
+app/migrations/
+SkipWork/__pycache__
